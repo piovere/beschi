@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.5/.schema/devbox.schema.json",
+  "packages": [
+    "python@latest",
+    "mono@latest",
+    "rustup@latest",
+    "go@latest",
+    "libiconv@latest",
+    "clang@latest",
+    "typescript@latest",
+    "swift@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null",
+      "rustup default stable",
+      ". $VENV_DIR/bin/activate",
+      "pip install -e '.[dev]'"
+    ],
+    "scripts": {
+      "test": [
+        "pytest"
+      ]
+    }
+  }
+}
